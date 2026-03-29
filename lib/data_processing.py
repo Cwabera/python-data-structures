@@ -1,19 +1,11 @@
-# This module contains functions to process student data.
+def average_age(students):
+    total = sum(s["age"] for s in students)
+    return total / len(students)
 
-def format_student_data(student):
-    """
-    Format student data for display.
-    The function should return a formatted string containing:
-    - Student ID
-    - Student Name
-    - Major
-    such as: "ID: 10 | Name: Louis Medina | Major: Computer Science"
-    """
-    pass
 
-def display_students(student_list):
-    """
-    Display all student records.
-    Loop through the student_list and print each student using format_student_data().
-    """
-    pass
+def count_by_major(students):
+    result = {}
+    for s in students:
+        major = s["major"]
+        result[major] = result.get(major, 0) + 1
+    return result

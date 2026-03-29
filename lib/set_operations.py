@@ -1,8 +1,13 @@
-# This module contains operations related to sets.
+def unique_majors(students):
+    return {s["major"] for s in students}
 
-def unique_majors(student_list):
-    """
-    Return a set of unique student majors using set comprehension.
-    Extract the major field from each student record.
-    """
-    pass
+
+def all_courses(students):
+    courses = set()
+    for s in students:
+        courses.update(s["courses"])
+    return courses
+
+
+def common_courses(student1, student2):
+    return set(student1["courses"]) & set(student2["courses"])
